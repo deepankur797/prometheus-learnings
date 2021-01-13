@@ -14,6 +14,9 @@ data:
       # Rules are empty for now 
 
     scrape_configs:
+      - job_name: 'prometheus'
+        static_configs:
+          - targets: ['localhost:9090']
       - job_name: 'kubernetes-apiservers'
 
         kubernetes_sd_configs:
