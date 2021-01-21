@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    prometheus.io/scrape: 'true'
+  labels:
+    app: flask
+    name: flask-service
+  name: flask-service
+spec:
+  type: NodePort
+  ports:
+  - name: custom-scrape
+    port: 5000
+    targetPort: 5000
+    nodePort: 32000
+    protocol: TCP
+  selector:
+    app: flask
+
