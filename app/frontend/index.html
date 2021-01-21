@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<link href="css/style.css" rel="stylesheet">
+		<title> Infracloud - Sample Application</title>
+		<style>
+		body {
+			background-image: url('images/index.png');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		</style>
+		<!--<div style="background-image: url('images/index.png');">-->
+	</head>
+	<body>
+		<div>
+		 <form action = "http://localhost:5000/submit" method = "post">
+ 			 <label for="fname">First name:</label><br>
+ 			 <input type="text" id="fname" name="fname"><br>
+			 <label for="lname">Last name:</label><br>
+			 <input type="text" id="lname" name="lname"><br>
+			 <label for="email">E-Mail:</label><br>
+			 <input type="text" id="email" name="E-mail"><br>
+			 <input type="submit" value="Submit"><br>
+		</form>
+		<form action = "http://localhost:5000/data">
+			<br><input type="submit" value="View Data">
+		</form>
+		</div>
+	</body>
+</html>

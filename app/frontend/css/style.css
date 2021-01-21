@@ -1,0 +1,9 @@
+body {
+	text-align: center;
+}
+div {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 250px 0;
+}
