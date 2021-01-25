@@ -9,6 +9,7 @@ resource "kubernetes_config_map" "grafana_datasources" {
   data = {
     "prometheus.yaml" = "{\n    \"apiVersion\": 1,\n    \"datasources\": [\n        {\n           \"access\":\"proxy\",\n            \"editable\": true,\n            \"name\": \"prometheus\",\n            \"orgId\": 1,\n            \"type\": \"prometheus\",\n            \"url\": \"http://prometheus-service.monitoring.svc:8080\",\n            \"version\": 1\n        }\n    ]\n}"
   }
+        depends_on =[kubernetes_namespace.monitoring]
 }
 
 
@@ -73,6 +74,7 @@ resource "kubernetes_deployment" "grafana" {
       }
     }
   }
+        depends_on =[kubernetes_namespace.monitoring]
 }
 
 # grafana service
@@ -102,6 +104,7 @@ resource "kubernetes_service" "grafana" {
 
     type = "NodePort"
   }
+        depends_on =[kubernetes_namespace.monitoring]
 }
 
 
